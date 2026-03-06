@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fast Food Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Fast Food Corner</h1>
+    <div id="cart-summary">
+      <!-- Cart image with item count -->
+      <a href="cart.html" style="position: relative; display: inline-block;">
+        <img src="images/cart.png" alt="Cart" style="width:50px;height:50px;">
+        <span id="cart-count" 
+              style="position:absolute; top:0; right:0; background:red; color:white; border-radius:50%; padding:2px 6px; font-size:14px;">
+          0
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section id="fast-food">
+      <h2>Fast Food</h2>
+      <div class="product-link">
+        <a href="fastfood.html">
+          <img src="images/fastfood.jpg" alt="Fast Food">
+          <p>Explore Fast Food</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Update cart count dynamically
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    document.getElementById('cart-count').textContent = cart.length;
+  </script>
+</body>
+</html>
